@@ -1,4 +1,4 @@
-
+# contact: sewemaquins@gmail.com
 
 out_x<-eventReactive(c(input$dat,
                        input$number_of_cases,

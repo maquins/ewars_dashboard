@@ -1,3 +1,4 @@
+# contact: sewemaquins@gmail.com
 ##objects
 
 ##login items  

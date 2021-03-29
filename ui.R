@@ -1,5 +1,5 @@
 
-
+# contact: sewemaquins@gmail.com
 library(shiny)
 library(plotly)
 library(shinydashboardPlus)

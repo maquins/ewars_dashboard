@@ -1,4 +1,5 @@
 ##  http://jfly.iam.u-tokyo.ac.jp/color/
+## source inla spde book
 c7rgb <- rgb(c(80, 80, 90, 95, 35,0, 0)/100, 
              c(60, 40, 60, 90, 70, 45, 0)/100, 
              c(70, 0, 0, 25, 90, 70, 0)/100)

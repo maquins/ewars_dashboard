@@ -1,11 +1,12 @@
+# contact: sewemaquins@gmail.com
 library(rsconnect)
 library(doParallel)
 library(foreach)
 library(dplyr)
 library(RSQLite)
 library(dplyr)
-
-setwd("~/Documents/EWARS_Nov_2020/working_Files_DEc_2020")
+#path<-""
+#setwd(path)
 db1<-paste(getwd(),"/model_runs.sqlite",sep='')
 #db2<-paste(getwd(),"/users.sqlite",sep='')
 db3<-paste(getwd(),"/prospective_data.sqlite",sep='')

@@ -1,4 +1,4 @@
-
+# contact: sewemaquins@gmail.com
 add_Variable<-function(p){
   vat_DB<-covariates_d[p]
   create_prodD<-paste("create table ",vat_DB,"(

@@ -1,3 +1,4 @@
+# contact: sewemaquins@gmail.com
 
 observeEvent(c(input$dat_spat,
                input$spat_Input_Type),{

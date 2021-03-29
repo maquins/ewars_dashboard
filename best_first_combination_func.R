@@ -1,3 +1,4 @@
+# contact: sewemaquins@gmail.com
 weeks_func<-function(p,dis_N){
   week_sel<-week_params[p,]
   outbreak_week_length<-week_sel$outbreak_week_length

@@ -1,3 +1,4 @@
+# contact: sewemaquins@gmail.com
 #options(shiny.reactlog=FALSE) 
 #list11<-list(x=2,y=3)
 #list11[[c(1:2)]][1]

@@ -6,6 +6,7 @@
   #}
 #}
 
+# contact: sewemaquins@gmail.com
 
 library(plyr)## This package should be loaded before dplyr
 library(dplyr)
@@ -80,9 +81,7 @@ if (!getDoParRegistered()){
 
 server<-function(input,output,session) { 
   
-  #ISO2<-"LKA"
-  #Country_name<-"Sri Lanka"
-  
+
   output$title_txt<-renderUI(tags$h3("Ewars Dashboard",style="font:cambria"))
   con <- dbConnect(SQLite(),"users.sqlite")
   pb<-dbGetQuery(con, "SELECT user_name,password,role FROM users_db")

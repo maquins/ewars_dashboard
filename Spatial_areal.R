@@ -1,3 +1,5 @@
+# contact: sewemaquins@gmail.com
+
 observeEvent(c(input$population_spat,
                input$number_of_cases_spat,
                input$alarm_indicators_spat,

@@ -1,5 +1,5 @@
 ## automatic calibration to return for each district
-
+# contact: sewemaquins@gmail.com
 
 
 get_params<-function(d){
