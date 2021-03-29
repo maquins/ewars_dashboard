@@ -1,0 +1,27 @@
+---
+title: "kable output"
+author: "Maquins"
+date: "8/16/2019"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+```
+
+## Including Plots
+
+
+
+```{r pressure, echo=FALSE}
+mtcars[1:5, 1:6] %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("condensed"), full_width =T)
+```
+

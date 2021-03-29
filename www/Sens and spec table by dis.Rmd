@@ -1,0 +1,27 @@
+---
+date: Sys.time()
+output: html_document
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+load("www/auto_out")
+
+```
+
+## Sensitivity and Specificity by District
+
+
+
+```{r pressure, echo=FALSE}
+auto_out$tab %>%
+  kable() %>%
+  kable_styling(bootstrap_options =c("condensed","striped","hover","responsive"),
+                full_width =F,font_size = 10.5) %>% column_spec((ncol(auto_out$tab)-1):ncol(auto_out$tab),
+                                                                color="red",
+                                                                bold = T,background =grey(0.9))
+```
+

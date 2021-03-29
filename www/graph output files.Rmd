@@ -1,0 +1,58 @@
+---
+date: Sys.time()
+output: html_document
+
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(stringr)
+library(shiny)
+library(knitr)
+library(plotly)
+load("www/auto_out")
+pp<-names(auto_out)
+
+unique(as.numeric(str_extract_all(names(auto_out),"[:number:]+")))
+
+a1<-str_extract(pp,"runin_[:number:]+")[!is.na(str_extract(pp,"runin_[:number:]+"))]
+a2<-str_extract(pp,"^eval_[:number:]+")[!is.na(str_extract(pp,"^eval_[:number:]+"))]
+a3<-str_extract(pp,"runin_eval_[:number:]+")[!is.na(str_extract(pp,"runin_eval_[:number:]+"))]
+
+a11<-paste(a1,a2,a3,collapse  =" ")
+
+a22<-paste("auto_out$",unlist(str_split(a11,pattern =" ")),sep='')
+
+```
+
+
+# Plots (Runin,Eval & Runin_Eval) by District
+
+```{r Runin, echo=F,eval=T}
+ctr<-list()
+
+for (i in 1:length(a22)){
+  ctr[i]<-paste( 
+    #paste("### Plot ",i,'\n'),
+    "```{r,echo=F,message=F,warning=F} \n",
+    
+   a22[i] ,
+   "\n",
+    
+    "``` \n",collapse='\n')
+  
+  
+  
+}
+```
+
+`
+
+`r paste(knitr::knit(text = paste(ctr, collapse = '\n')))`
+
+
+
+
+
+

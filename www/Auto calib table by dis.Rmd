@@ -1,0 +1,34 @@
+---
+date: Sys.time()
+output: html_document
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(kableExtra)
+load("www/auto_out")
+dis_b<-auto_out$auto_tab %>% dplyr::group_by(district) %>% mutate(sel.n=1:n()) %>% 
+  filter(sel.n==1)
+                         
+                         names(dis_b)<-str_remove(names(dis_b),"[:number:]+")
+                         
+                         dis_b1<-dis_b[,-ncol(dis_b)]
+                         dis_b2<-data.frame(alarm_variables=paste(alarm_indicators,collapse=' '),dis_b1)
+                         
+                         dis_b3<-dis_b2[,c(2,1,3:ncol(dis_b2))]
+```
+
+## Auto Calibration Parameters by District
+
+
+
+```{r pressure, echo=FALSE}
+dis_b3 %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("condensed","striped","hover","responsive"), 
+                full_width =T,font_size = 11)%>% column_spec(ncol(dis_b3),color="red",
+                                                                bold = T,background =grey(0.9))
+```
+
