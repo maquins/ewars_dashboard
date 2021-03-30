@@ -2,7 +2,7 @@
 
 ewars dashboard R scripts and files
 
-This repository containers the R scripts need to run the EWARS dashboard
+This repository containers the R scripts needed to run the EWARS dashboard
 
 You can mirror the folder stucture and run the dashboard locally
 
