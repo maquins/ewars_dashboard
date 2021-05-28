@@ -1,5 +1,5 @@
 
-# contact: sewemaquins@gmail.com
+
 library(shiny)
 library(plotly)
 library(shinydashboardPlus)
@@ -14,8 +14,8 @@ source("objects in UI.R")
 shinyUI(
   
   #titlePanel(tags$h4("EWARS-Dashboard")),
-  uiOutput('log_list') 
-  #UI_NO_login
+  #uiOutput('log_list') 
+  ui_yes
 
       )
 
