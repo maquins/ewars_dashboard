@@ -39,9 +39,6 @@ library(pkgload)
 library(rgeos)
 library(raster)
 #library(pak)
-library(INLA)
-library(spdep)
-library(leaflet)
 
 #options(repos=c(INLA="https://inla.r-inla-download.org/R/stable",
                # CRAN="https://cran.rstudio.com/"))
@@ -88,16 +85,16 @@ server<-function(input,output,session) {
   
   output$title_txt<-renderUI(tags$h3("Ewars Dashboard",style="font:cambria"))
   con <- dbConnect(SQLite(),"users.sqlite")
-  pb<-dbGetQuery(con, "SELECT user_name,password,role FROM users_db")
-  
+  #pb<-dbGetQuery(con, "SELECT user_name,password,role FROM users_db")
+  pb<-data.frame(user_name="demo",password="demo_2019",role="admin")
   pb_dis<-dbGetQuery(con, "SELECT user_name,district_code FROM users_districts")
   dbDisconnect(con)
   
   login = F
   USER <- reactiveValues(login = login)
-  user_info<-reactiveValues(nm_pwd="",user="")
+  user_info<-reactiveValues(nm_pwd="demo_2019",user="demo")
   
-  observeEvent(input$lg_in,{
+  observeEvent(input$lg_in11,{
     user_info$nm_pwd<-paste(str_trim(tolower(input$user_name)),str_trim(input$pwd))
     user_info$user<-str_trim(tolower(input$user_name))
     output$logged_in_user<-renderUI(input$user_name)
@@ -382,7 +379,7 @@ server<-function(input,output,session) {
     if(nrow(runs_D)>0){
     
     dist_chs<-as.numeric(unique(runs_D$district))
-    print(paste0("the districts::",paste0(sort(unique(runs_D$district))),collapse ="<>"))
+    #print(paste0("the districts::",paste0(sort(unique(runs_D$district))),collapse ="<>"))
     
     runs_D.a<-runs_D %>% mutate(ti1=paste(Year,month,day,sep ="-"),
                                    ti2=paste(hour,minute,second,sep =":"),
