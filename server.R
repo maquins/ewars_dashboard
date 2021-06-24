@@ -44,7 +44,7 @@ library(raster)
                # CRAN="https://cran.rstudio.com/"))
 ##load INLA package
 
-#library(INLA)
+library(INLA)
 
 library(doParallel)
 library(profvis)
