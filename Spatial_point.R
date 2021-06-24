@@ -66,10 +66,10 @@ observeEvent(c(input$dat_spat,
   boundary_file<-var_names_spat()$SHP
   dat_fl<-var_names_spat()$dat
   
-  untar("INLA_20.03.17.tar.gz")
+  #untar("INLA_20.03.17.tar.gz")
   
-  pkgload::load_all(paste0(getwd(),"/INLA"))
-  inla.dynload.workaround()
+  #pkgload::load_all(paste0(getwd(),"/INLA"))
+  #inla.dynload.workaround()
   
   #boundary_file_mod<-boundary_file[which(boundary_file$district %in% dat_fl$district),]
   
